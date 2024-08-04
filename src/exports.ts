@@ -1,1 +1,1 @@
-import("~components/hello-text").then(module => module.default());
+export { default as HelloText } from "./components/hello-text";

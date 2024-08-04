@@ -38,6 +38,7 @@ module.exports = {
         "@typescript-eslint/type-annotation-spacing": [
             "error", { before: false, after: true },
         ],
+        "import/prefer-default-export": "off",
         "wc/guard-super-call": "off",
         "no-unused-vars": "off",
         "no-param-reassign": "off",

@@ -6,17 +6,8 @@
     "module": "ESNext",
     "baseUrl": ".",
     "paths": {
-      "~services/*": [
-        "./src/services/*"
-      ],
       "~components/*": [
         "./src/components/*"
-      ],
-      "~utils/*": [
-        "./src/utils/*"
-      ],
-      "~styles/*": [
-        "./src/assets/styles/*"
       ],
       "~src/*": [
         "./src/*"
@@ -26,6 +17,6 @@
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+    "plugins": [{ "name": "typescript-plugin-css-modules" }, { "name": "ts-lit-plugin" }]
   },
 }

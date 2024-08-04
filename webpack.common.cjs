@@ -1,4 +1,3 @@
-const fs = require("fs");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const FileManagerPlugin = require("filemanager-webpack-plugin");
@@ -6,18 +5,26 @@ const { DefinePlugin } = require("webpack");
 const paths = require("./webpack.paths");
 
 const config = {
-    entry: paths.entry,
-
+    entry: {
+        main: "./src/exports.ts",
+        reactMain: "./src/react-exports.ts"
+    },
     output: {
         path: `${paths.build}`,
-        filename: "bundles/[name].[contenthash].js",
+        filename: "[name].js",
+        library: {
+            type: "module",
+        },
+    },
+    experiments: {
+        outputModule: true,
     },
 
     plugins: [
         new HtmlWebpackPlugin({
             template: `${paths.playground}/index.html`,
             filename: `./index.html`,
-            chunks: 'test',
+            scriptLoading: "module"
         }),
         new DefinePlugin({
             PRODUCTION: process.env.NODE_ENV.startsWith("production"),

@@ -19,6 +19,10 @@ const config = mergeWithRules({
 })(common, {
     mode: "production",
 
+    externals: {
+        react: 'react',
+    },
+
     module: {
         rules: [{
             test: /\.(ts|tsx)$/,
@@ -32,17 +36,17 @@ const config = mergeWithRules({
         }],
     },
 
-    plugins: [
-        new FileManagerPlugin({
-            events: {
-                onEnd: {
-                    archive: [
-                        { source: `${paths.build}/`, destination: `${paths.build}/build.zip` },
-                    ],
-                },
-            },
-        }),
-    ],
+    //plugins: [
+    //    new FileManagerPlugin({
+    //        events: {
+    //            onEnd: {
+    //                archive: [
+    //                    { source: `${paths.build}/`, destination: `${paths.build}/build.zip` },
+    //                ],
+    //            },
+    //        },
+    //    }),
+    //],
 
     optimization: {
         minimize: true,
@@ -55,16 +59,17 @@ const config = mergeWithRules({
             new CssMinimizerPlugin(),
         ],
 
-        runtimeChunk: "single",
-        splitChunks: {
-            cacheGroups: {
-                vendor: {
-                    test: /[\\/]node_modules[\\/]/,
-                    name: "vendors",
-                    chunks: "all",
-                },
-            },
-        },
+        // not bothering with chunks for now so that i can emit single file and import it in other projects 
+        //runtimeChunk: "single",
+        //splitChunks: {
+        //    cacheGroups: {
+        //        vendor: {
+        //            test: /[\\/]node_modules[\\/]/,
+        //            name: "vendors",
+        //            chunks: "all",
+        //        },
+        //    },
+        //},
     },
 });
 

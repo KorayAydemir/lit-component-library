@@ -1,4 +1,4 @@
-const { merge } = require("webpack-merge");
+const { merge, mergeWithCustomize } = require("webpack-merge");
 const paths = require("./webpack.paths");
 const common = require("./webpack.common");
 
