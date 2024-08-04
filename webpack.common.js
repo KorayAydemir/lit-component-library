@@ -52,8 +52,8 @@ const config = {
         }, {
             test: /.(scss|css)$/,
             use: [
-                'lit-css-loader',
-                'sass-loader',
+                { loader: 'lit-css-loader' },
+                { loader: 'sass-loader' },
             ],
         }, {
             test: /\.(png|svg|jpg|jpeg|gif)$/,
