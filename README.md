@@ -4,12 +4,11 @@
 
 Folders and files in this project: 
 1. `/src/components` - all components the library exposes 
-2. `/src/exports.ts` - exports components for library consumers to import from "lit-component-library"
-3. `/src/react-exports.ts` - exports components for library consumers who are using react to import. They will need to import the components from "lit-component-library/react"
-4. `/src/playground/index.html` - you can develop and test components here when you run `npm run dev` 
-5. `/src/assets/to-root` - on build, contents from this folder are copied to the root of the build
-6. `/src/assets/to-root/index.css` - this is the css file for the /src/playground/index.html
-
+2. `/src/themes/default.css` - default theme variables like colors, fonts etc. 
+2. `/src/components/**/styles.css` - Styles for each component. Gives styling to the component. Also defines component spesific color variables like --button-hover-color, and preferably those variables use the variables from default theme, like `--button-hover-color: --primary-color`
+3. `/src/exports.ts` - exports components for library consumers to import from "lit-component-library"
+4. `/src/react-exports.ts` - exports components for library consumers who are using react to import. They will need to import the components from "lit-component-library/react"
+5. `/playground/index.html` - you can develop and test components here when you run `npm run dev` 
 ## Setup
 
 Install dependencies:
