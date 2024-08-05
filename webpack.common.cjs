@@ -26,7 +26,7 @@ const config = {
         new HtmlWebpackPlugin({
             // Input file
             template: `${paths.playground}/index.html`,
-            // Output file
+            // Output file (relative to output.path)
             filename: `./index.html`,
             scriptLoading: "module"
         }),

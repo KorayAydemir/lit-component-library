@@ -11,7 +11,7 @@ const paths = {
         main: getAbsolutePath("/src/exports.ts"),
         reactMain: getAbsolutePath("/src/react-exports.ts"),
     },
-    playground: getAbsolutePath("/src/playground")
+    playground: getAbsolutePath("/playground")
 };
 
 module.exports = paths;
