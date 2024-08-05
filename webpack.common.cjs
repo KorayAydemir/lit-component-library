@@ -28,7 +28,8 @@ const config = {
             template: `${paths.playground}/index.html`,
             // Output file (relative to output.path)
             filename: `./index.html`,
-            scriptLoading: "module"
+            scriptLoading: "module",
+            chunks: ["main"]
         }),
         new DefinePlugin({
             PRODUCTION: process.env.NODE_ENV.startsWith("production"),
