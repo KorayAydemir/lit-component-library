@@ -19,7 +19,7 @@ npm i
 
 ## Dev Server
 
-To start the dev server run (by default on _localhost:2797_):
+To start the dev server run (by default on _localhost:5077_):
 
 ```bash
 npm run dev
