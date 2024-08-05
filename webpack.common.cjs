@@ -6,23 +6,27 @@ const paths = require("./webpack.paths");
 
 const config = {
     entry: {
-        main: "./src/exports.ts",
-        reactMain: "./src/react-exports.ts"
+        main: paths.entries.main,
+        reactMain: paths.entries.reactMain,
     },
     output: {
-        path: `${paths.build}`,
+        path: paths.build,
         filename: "[name].js",
         library: {
+            // Output ESM exports
             type: "module",
         },
     },
     experiments: {
+        // Required to output ESM
         outputModule: true,
     },
 
     plugins: [
         new HtmlWebpackPlugin({
+            // Input file
             template: `${paths.playground}/index.html`,
+            // Output file
             filename: `./index.html`,
             scriptLoading: "module"
         }),
@@ -39,7 +43,7 @@ const config = {
                 },
                 onEnd: {
                     copy: [
-                        { source: `${paths.src}/assets/to-root`, destination: `${paths.build}/` },
+                        { source: `src/assets/to-root`, destination: `${paths.build}/` },
                     ],
                 },
             },

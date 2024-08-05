@@ -36,6 +36,7 @@ const config = mergeWithRules({
         }],
     },
 
+    // may use this to publish less bytes to npm
     //plugins: [
     //    new FileManagerPlugin({
     //        events: {
@@ -59,7 +60,9 @@ const config = mergeWithRules({
             new CssMinimizerPlugin(),
         ],
 
-        // not bothering with chunks for now so that i can emit single file and import it in other projects 
+        // not bothering with chunks for now so that i can emit
+        // single file and import it in other projects 
+        // maybe should have a chunk for each component later ? 
         //runtimeChunk: "single",
         //splitChunks: {
         //    cacheGroups: {
