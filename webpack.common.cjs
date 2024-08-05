@@ -45,7 +45,7 @@ const config = {
                 onEnd: {
                     copy: [
                         { source: `src/themes/default.css`, destination: `${paths.build}/` },
-                        { source: `playground/playground.css`, destination: `${paths.build}/` }
+                        { source: `${paths.playground}/playground.css`, destination: `${paths.build}/` },
                     ],
                 },
             },
