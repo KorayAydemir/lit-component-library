@@ -1,6 +1,6 @@
-import { css, html, LitElement, TemplateResult } from "lit";
+import { CSSResult, html, LitElement, TemplateResult } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import scopedStyles from "./styles.module.scss";
+import style from "./styles.module.scss";
 
 @customElement("hello-text")
 export default class HelloText extends LitElement {
@@ -13,9 +13,5 @@ export default class HelloText extends LitElement {
         `;
     }
 
-    static styles = [scopedStyles as never, css`
-        :host h4 {
-            color: red;
-        }
-    `];
+    static styles = [style as CSSResult];
 }
