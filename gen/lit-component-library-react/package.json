@@ -1,0 +1,24 @@
+{
+  "name": "lit-component-library-react",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch"
+  },
+  "version": "4.1.5",
+  "dependencies": {
+    "lit-component-library": "^4.1.5",
+    "@lit/react": "^1.0.0"
+  },
+  "peerDependencies": {
+    "react": "^17 || ^18",
+    "@types/react": "^17 || ^18"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  },
+  "files": [
+    "src/components/hello-text/index.{js,js.map,d.ts,d.ts.map}",
+    "src/components/switch/switch.{js,js.map,d.ts,d.ts.map}"
+  ]
+}
